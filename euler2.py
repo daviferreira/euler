@@ -1,20 +1,20 @@
 import math
 
-def sequencia_fibonacci():
+def fibonacci_sequence():
   x, y = 0, 1
   while True:
     yield x
     x, y = y, x+y
 
-def numero_par(sequencia):
-  for numero in sequencia:
+def even_number(sequence):
+  for numero in sequence:
     if not numero % 2:
       yield numero
 
-def abaixo_de_quatro_milhoes(sequencia):      
-  for numero in sequencia:
+def under_four_million(sequence):      
+  for numero in sequence:
     if numero > 4000000:
       break
     yield numero
 
-print sum(numero_par(abaixo_de_quatro_milhoes(sequencia_fibonacci())))
+print sum(even_number(under_four_million(fibonacci_sequence())))
