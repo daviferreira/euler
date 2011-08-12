@@ -1,5 +1,5 @@
 import math
-from helpers import *
+from helpers import is_prime_number 
 
 sum_primes_below_two_million = 0
 

@@ -1,5 +1,5 @@
 import math
-from helpers import *
+from helpers import is_prime_number 
 
 number = 1 
 count = 0
