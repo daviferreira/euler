@@ -1,11 +1,9 @@
 from helpers import *
 
 i = 1 
-
-while True:
+divisors = 0
+while divisors <= 500:
   n = triangle_number(i) 
   print n
-  if divisors_count(n) > 500:
-    print n
-    break
+  divisors = divisors_count(n)
   i += 1
