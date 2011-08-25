@@ -19,6 +19,19 @@ def is_prime_number(n):
         return False
     return True
 
+def factors(n):
+  factors = [] 
+  for x in range(n, 0, -1):
+    factors.append(x)
+  return factors
+
+def factorial(n):
+  factors_list = factors(n)
+  factorial = 1
+  for x in factors_list:
+    factorial *= x
+  return factorial 
+
 def prime_factorization(n):
   prime_factors = {} 
   x = 2 
