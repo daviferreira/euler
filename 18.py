@@ -16,17 +16,29 @@ triangle = [
   [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23,],
 ]
 
+triangle_with_results = [
+  [ triangle[0][0] ]    
+]
+
 for row in xrange(0, (len(triangle)-1)):
+  triangle_with_results.append([])
   for col in xrange(0, len(triangle[row])):
-    triangle[row+1][col] = triangle[row][col] + triangle[row+1][col]
+    current_number = triangle_with_results[row][col]
     try:
-      triangle[row+1][col+1] = triangle[row][col] + triangle[row+1][col+1]
+      triangle_with_results[row+1].append(current_number + triangle[row+1][col])
+    except:
+      pass
+    try:
+      triangle_with_results[row+1].append(current_number + triangle[row+1][col+1])
     except:
       pass
 
+
+print triangle_with_results
+
 max = 0
 
-for num in triangle[(len(triangle)-1)]:
+for num in triangle_with_results[(len(triangle_with_results)-1)]:
   if num > max: max = num
 
 print max
